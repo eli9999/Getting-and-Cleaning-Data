@@ -113,7 +113,7 @@ setwd ("/UCI Har Dataset")
 write.csv(tidy_data_set, file = "tidy_data_set1.csv", row.names = FALSE)
 write.table(tidy_data_set, file = "tidy_data_set2.txt", row.names = FALSE)
 write.table(tidy_data_set, file = "tidy_data_set3.R", row.names = FALSE)
-write.table(tidy_data_set, file = "tidy_data_set4.txt", row.names=TRUE, sep='\t')
+
 
 
 
