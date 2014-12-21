@@ -13,8 +13,8 @@ subject_train <- read.table("/UCI HAR Dataset/train/subject_train.txt", header =
 x_train <- read.table ("/UCI HAR Dataset/train/X_train.txt", header = FALSE, sep = "")
 y_train <- read.table("/UCI HAR Dataset/train/y_train.txt", header = FALSE, sep = "")
 
-features <-  read.table("/UCI HAR Dataset/features.txt",header=FALSE) 
-activity_label <-  read.table("/UCI HAR Dataset/activity_labels.txt", header=FALSE)
+features <-  read.table("/UCI HAR Dataset/features.txt",header = FALSE) 
+activity_label <-  read.table("/UCI HAR Dataset/activity_labels.txt", header = FALSE)
  
 
 ## Assigning names to columns.
@@ -31,11 +31,11 @@ train_data <- cbind(subject_train, x_train, y_train)
 
 ## Importing the test data. 
 
-subject_test <- read.table("/UCI HAR Dataset/test/subject_test.txt", header=FALSE) 
+subject_test <- read.table("/UCI HAR Dataset/test/subject_test.txt", header = FALSE) 
 
-x_test <- read.table("/UCI HAR Dataset/test/X_test.txt", header=FALSE) 
+x_test <- read.table("/UCI HAR Dataset/test/X_test.txt", header = FALSE) 
 
-y_test <- read.table("/UCI HAR Dataset/test/y_test.txt", header=FALSE) 
+y_test <- read.table("/UCI HAR Dataset/test/y_test.txt", header = FALSE) 
 
 
 ## Assigning names to columns.
