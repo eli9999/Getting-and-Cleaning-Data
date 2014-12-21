@@ -106,7 +106,7 @@ tidy_data_set  <- aggregate(data_setrem_act_label[, names(data_setrem_act_label)
 
 ## Merging the tidy data set with activity label.
 
-tidy_data_set  <- merge(tidy_data_set, activity_label, by="activity_name", all.x=TRUE)
+tidy_data_set  <- merge(tidy_data_set, activity_label, by="activity_name", all.x = TRUE)
 
 setwd ("/UCI Har Dataset")
 
