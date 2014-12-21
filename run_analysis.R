@@ -53,9 +53,10 @@ test_data <- cbind(subject_test, x_test, y_test)
 
 data_set <- rbind(train_data, test_data)
 
-colnames  <- colnames(data_set)
 
 ## Collect here mean() & stddev() columns from the data set.
+
+colnames  <- colnames(data_set)
 
 
 ## 2. Extract only the measurements on the mean and standard deviation for each measurement. 
@@ -78,7 +79,8 @@ data_set <- merge(data_set, activity_label, by = "activity_name", all.x = TRUE)
 
 col_names  <- colnames(data_set)
 
-## 4. Appropriately labels the data set with descriptive variable names. 
+## 4. Appropriately labeling  the data set with descriptive variable names. 
+
 for (i in 1:length(col_names)) 
 {col_names[i] <-  gsub("-mean", "Mean", col_names[i])
  col_names[i] <-  gsub("-std$", "Std", col_names[i])
@@ -88,7 +90,7 @@ for (i in 1:length(col_names))
  col_names[i] <- gsub("Acc", "Acceleration", col_names[i])
  col_names[i] <-  gsub("Gyro", "Gyroscope", col_names[i])}
 
-## Appropriately labels the data set with descriptive variable names. Giving column names to the data set.
+## Giving column names to the data set.
 
 colnames(data_set) <- col_names
 
@@ -108,7 +110,7 @@ tidy_data_set  <- merge(tidy_data_set, activity_label, by="activity_name", all.x
 
 setwd ("/UCI Har Dataset")
 
-## Export the tidy_data_set set 
+## Export the tidy_data_set 
 
 write.csv(tidy_data_set, file = "tidy_data_set1.csv", row.names = FALSE)
 write.table(tidy_data_set, file = "tidy_data_set2.txt", row.names = FALSE)
