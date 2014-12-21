@@ -5,7 +5,7 @@ rm(list=ls())
 ## Cleaning memory.
 
 setwd ("/UCI Har Dataset")
-##get(wd)
+## get(wd)
 
 ## Importing data of subjects, trainings, features, activity labels.
 
@@ -13,17 +13,15 @@ subject_train <- read.table("/UCI HAR Dataset/train/subject_train.txt", header =
 x_train <- read.table ("/UCI HAR Dataset/train/X_train.txt", header = FALSE, sep = "")
 y_train <- read.table("/UCI HAR Dataset/train/y_train.txt", header = FALSE, sep = "")
 
-features <-  read.table("/UCI HAR Dataset/features.txt",header = FALSE) 
-activity_label <-  read.table("/UCI HAR Dataset/activity_labels.txt", header = FALSE)
+features <- read.table("/UCI HAR Dataset/features.txt",header = FALSE) 
+activity_label <- read.table("/UCI HAR Dataset/activity_labels.txt", header = FALSE)
  
-
 ## Assigning names to columns.
 
-colnames(subject_train)  <- "subject_name"
-colnames(x_train)   <- features[, 2]
-colnames(y_train)     <- "activity_name"
-colnames(activity_label)  <- c("activity_name", "ActivityLabel")
-
+colnames(subject_train) <- "subject_name"
+colnames(x_train) <- features[, 2]
+colnames(y_train) <- "activity_name"
+colnames(activity_label) <- c("activity_name", "ActivityLabel")
 
 ## Merging subject_train, x_train and y_train to make a training data.
 
@@ -37,27 +35,23 @@ x_test <- read.table("/UCI HAR Dataset/test/X_test.txt", header = FALSE)
 
 y_test <- read.table("/UCI HAR Dataset/test/y_test.txt", header = FALSE) 
 
-
 ## Assigning names to columns.
 
 colnames(subject_test) <- "subject_name"
 colnames(x_test) <- features[, 2]
-colnames(y_test)  <- "activity_name"
-
+colnames(y_test) <- "activity_name"
 
 ## Merging subject_test, x_test and y_test to make a testing data.
 
 test_data <- cbind(subject_test, x_test, y_test)
 
-# Merging training and test data to making one data set.
+## Merging training and test data to making one data set.
 
 data_set <- rbind(train_data, test_data)
 
-
 ## Collect here mean() & stddev() columns from the data set.
 
-colnames  <- colnames(data_set)
-
+colnames <- colnames(data_set)
 
 ## 2. Extract only the measurements on the mean and standard deviation for each measurement. 
 
@@ -77,7 +71,7 @@ data_set <- merge(data_set, activity_label, by = "activity_name", all.x = TRUE)
 
 ## Updating data to include the new column names after merge.
 
-col_names  <- colnames(data_set)
+col_names <- colnames(data_set)
 
 ## 4. Appropriately labeling  the data set with descriptive variable names. 
 
@@ -98,15 +92,15 @@ colnames(data_set) <- col_names
 
 ## Create a new table, excluding the activity label column.
 
-data_setrem_act_label  <- data_set[, names(data_set) != "activity_label"]
+data_setrem_act_label <- data_set[, names(data_set) != "activity_label"]
 
 ## Summarizing the data set to include the mean of each variable for each activity and each subject.
 
-tidy_data_set  <- aggregate(data_setrem_act_label[, names(data_setrem_act_label) != c("activity_name", "subject_name")], by = list(activity_name = data_setrem_act_label$activity_name, subject_name = data_setrem_act_label$subject_name), mean)
+tidy_data_set <- aggregate(data_setrem_act_label[, names(data_setrem_act_label) != c("activity_name", "subject_name")], by = list(activity_name = data_setrem_act_label$activity_name, subject_name = data_setrem_act_label$subject_name), mean)
 
 ## Merging the tidy data set with activity label.
 
-tidy_data_set  <- merge(tidy_data_set, activity_label, by="activity_name", all.x = TRUE)
+tidy_data_set <- merge(tidy_data_set, activity_label, by="activity_name", all.x = TRUE)
 
 setwd ("/UCI Har Dataset")
 
