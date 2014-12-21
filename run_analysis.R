@@ -51,7 +51,7 @@ test_data = cbind(subject_test, x_test, y_test)
 
 # Merging training and test data to making one data set.
 
-data_set = rbind(train_data, test_data)
+data_set <- rbind(train_data, test_data)
 
 colnames  <- colnames(data_set)
 
