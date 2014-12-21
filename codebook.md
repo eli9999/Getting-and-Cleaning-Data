@@ -35,12 +35,12 @@ The following files are available for the train and test data. Their description
 Notes: 
 ======
 - Features are normalized and bounded within [-1,1].
-- Each feature vector is a row on the text file/
-- 
-+Each of these variables contains the average of each variable for each activity and each subject of the original data. Each variable contains either the mean or the standard deviation of the original variable.
+- Each feature vector is a row on the text file.
+- Each of these variables contains the average of each variable for each activity and each subject of the original data.
+- Each variable contains either the mean or the standard deviation of the original variable.
  
 List:
-
+<ul>
 
    timeBodyAccelerationMeanX
    timeBodyAccelerationMeanY
@@ -108,6 +108,6 @@ List:
    frequencyBodyBodyGyroMagStd
    frequencyBodyBodyGyroJerkMagMean
    frequencyBodyBodyGyroJerkMagStd- 
-  
+  </ul>
  
 
