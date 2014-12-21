@@ -27,7 +27,7 @@ colnames(activity_label)  <- c("activity_name", "ActivityLabel")
 
 ## Merging subject_train, x_train and y_train to make a training data.
 
-train_data = cbind(subject_train, x_train, y_train)
+train_data <- cbind(subject_train, x_train, y_train)
 
 ## Importing the test data. 
 
@@ -47,7 +47,7 @@ colnames(y_test)  <- "activity_name"
 
 ## Merging subject_test, x_test and y_test to make a testing data.
 
-test_data = cbind(subject_test, x_test, y_test)
+test_data <- cbind(subject_test, x_test, y_test)
 
 # Merging training and test data to making one data set.
 
