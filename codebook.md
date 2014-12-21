@@ -32,6 +32,8 @@ The following files are available for the train and test data. Their description
 
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 - 'features_info.txt': Shows information about the variables used on the feature vector.
+
+======
 Notes: 
 ======
 - Features are normalized and bounded within [-1,1].
@@ -41,7 +43,7 @@ Notes:
  
 List:
 <ul>
-
+<li>
    timeBodyAccelerationMeanX
    timeBodyAccelerationMeanY
    timeBodyAccelerationMeanZ
@@ -108,6 +110,7 @@ List:
    frequencyBodyBodyGyroMagStd
    frequencyBodyBodyGyroJerkMagMean
    frequencyBodyBodyGyroJerkMagStd- 
+</li>
   </ul>
  
 
